@@ -25,14 +25,14 @@ function sacarle_datos($resultado, $campo) {
     return $matches[1];
 }
 
-if(!curl_exec($ch)){
+if(!$return){
     echo 'No se pudo ejecutar la consulta.  Error CURL: '.curl_error($ch) . '" - Codigo del error: ' . curl_errno($ch);                            
 }
 else {	
 	curl_close($ch);
 
 	$a = array();
-    $b = array();
+    	$b = array();
 
 	for($i = 0; $i < 1; $i++) {
     	$b["nombre"] = utf8_encode(trim(sacarle_datos($return, "NOMBRE:")));
